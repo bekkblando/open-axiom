@@ -1,4 +1,82 @@
+/* Get fonts */
+/*@font-face {
+  font-family: 'Monserrat';
+  font-weight: "ultra-light";
+  src:  url('../fonts/Montserrat-Light.otf');
+}*/
+
 html, body{
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Montserrat';
+  background-color: #212121;
+}
+
+.main-header{
+  text-align: center;
+  background-color: #212121;
+  height: 100vh;
+  width: 100%;
+}
+
+.main-title{
+  margin-top: 25vh;
+  color: #fafafa;
+  letter-spacing: 3px;
+  font-family: "Montserrat Hairline";
+}
+
+.site-tag{
+  margin-top: 10vh;
+  color: #fafafa;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
+.tag-line-word:hover{
+  color: #2962ff;
+}
+
+.tag-line-word-special{
+  color: #2962ff;
+}
+
+.tag-line-word-special:hover{
+  color: #fafafa;
+}
+
+#top-tag-line{
+  font-size: 1.2em;
+  letter-spacing: 5px;
+  font-family: "Montserrat Light";
+}
+
+.down-arrow{
+  margin-top:15%;
+}
+
+.flaticon-arrows{
+  font-size:3.3em;
+  color:white;
+}
+.flaticon-arrows:before{
+  color:white;
+  font-size:1em;
+}
+
+
+/* Bounce Effect */
+.flaticon-arrows {
+  position:absolute;
+  left:50%;
+  margin-left:-25px;
+  -webkit-animation:bounce 1s 5;
+}
+
+@-webkit-keyframes bounce {
+  0%       { bottom:5px; }
+  25%, 75% { bottom:15px; }
+  50%      { bottom:25px; }
+  100%     {bottom:0;}
 }

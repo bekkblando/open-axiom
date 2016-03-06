@@ -11,10 +11,18 @@
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    <link href="http://allfont.net/allfont.css?fonts=montserrat-light" rel="stylesheet" type="text/css" />
+    <link href="http://allfont.net/allfont.css?fonts=montserrat-hairline" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
     {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/flaticon.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
@@ -23,9 +31,6 @@
 </head>
 <body class="{{body_class}} nav-closed">
 
-    {{navigation}}
-
-    <div class="site-wrapper">
 
         {{! Everything else gets inserted here }}
         {{{body}}}
@@ -35,7 +40,6 @@
             <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
         </footer>
 
-    </div>
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -45,6 +49,28 @@
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script>
+    /* Helper Scripts TODO Export to seperate file */
+    tag = "<div_id='top-tag-line'>Axiom_defined</div> a statement or proposition that is regarded as being self-evidently true."
+    tag_list = tag.split(" ");
+    for (var i = 0; i < tag_list.length; i++){
+      word_wrap = "<span class='tag-line-word'>" + tag_list[i] + "</span> "
+      word_wrap = word_wrap.replace(/_/g, " ");
+      if(tag_list[i] ===  tag_list.slice(-1)[0]){
+        console.log("oh no")
+        word_wrap = "<span class='tag-line-word-special'>" + tag_list[i] + "</span> "
+      }
 
+      $('.site-tag').append(word_wrap);
+    }
+
+    $('.down-arrow').click(function(event) {
+        // Preventing default action of the event
+        event.preventDefault();
+        // Getting the height of the document
+        var n = $(document).height();
+        $('html, body').animate({ scrollTop: n }, 1000);
+    });
+    </script>
 </body>
 </html>

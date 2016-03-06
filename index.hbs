@@ -2,8 +2,19 @@
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
 {{! The big featured header }}
-<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-
+<header class="main-header ">
+<div class="container">
+  <div class="col s12">
+    <div class="row">
+    <h1 class="main-title">{{meta_title}}</h1>
+  </div>
+</div>
+<div class="row">
+    <p class="site-tag"></p>
+</div>
+<div class="down-arrow">
+<i class="flaticon-arrows"></i>
+</div>
 </header>
 
 {{! The main content area on the homepage }}
